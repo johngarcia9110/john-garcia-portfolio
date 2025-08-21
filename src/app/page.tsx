@@ -112,7 +112,7 @@ export default function Page() {
           </BlurFade>
           {DATA.work.map((work, id) => (
             <BlurFade
-              key={work.company}
+              key={work.company + work.start + work.end}
               delay={BLUR_FADE_DELAY * 6 + id * 0.05}
             >
               <ResumeCard
