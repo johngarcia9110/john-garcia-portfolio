@@ -8,9 +8,9 @@ export const DATA = {
   location: "Bay Area, CA",
   locationLink: "https://www.google.com/maps/place/bayarea",
   description:
-    "Product focused software engineer. I love building things that people enjoy using.",
+    "Product-focused engineering leader who helps teams build software that people love to use",
   summary:
-    "In 2014, I worked as an Avionics Technician in the US Air Force with what felt like the most poorly designed software to maintain and troubleshoot aircraft systems. My frustration with these systems inspired me to learn how to code and build software that people would enjoy using.",
+    "I lead product and engineering at Lumanu, where I work with a great team to build payment solutions that make it easy for businesses to pay contractors quickly and at scale. \n\n My path into software started in the U.S. Air Force, where I was an Avionics Technician dealing with clunky tools that made tough jobs even harder. That frustration pushed me to start coding, and I’ve been hooked ever since. These days, the same motivation drives me to build tools that actually make life easier and put the user experience at the center of everything I do.",
   avatarUrl: "/me2.jpeg",
   skills: ["React", "Next.js", "Typescript", "Node.js", "Python", "Postgres"],
   navbar: [
