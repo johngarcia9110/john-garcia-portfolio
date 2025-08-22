@@ -45,6 +45,11 @@ export const ResumeCard = ({
     if (description) {
       e.preventDefault();
       setIsExpanded(!isExpanded);
+      if (isExpanded) {
+        onCollapse?.();
+      } else {
+        onExpand?.();
+      }
     }
   };
 
