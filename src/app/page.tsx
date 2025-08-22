@@ -128,7 +128,7 @@ export default function Page() {
                 isDefaultExpanded={allWorkItemsExpanded}
                 onExpand={() => {
                   setNumberOfWorkItemsExpanded(numberOfWorkItemsExpanded + 1);
-                  if (numberOfWorkItemsExpanded === DATA.work.length) {
+                  if (numberOfWorkItemsExpanded + 1 === DATA.work.length) {
                     setAllWorkItemsExpanded(true);
                   }
                 }}
