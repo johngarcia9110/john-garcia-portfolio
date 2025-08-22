@@ -62,22 +62,9 @@ export default function RootLayout({
         )}
       >
         <ThemeProvider attribute="class" defaultTheme="light">
-          {/* <div
-            className="fixed inset-0 z-0 dark:hidden"
-            style={{
-              backgroundImage:
-                "repeating-linear-gradient(45deg, transparent, transparent 2px, #f3f4f6 2px, #f3f4f6 4px)",
-            }}
-          /> */}
-
           <div
-            className="absolute inset-0 z-0"
+            className="absolute inset-0 z-0 dark:hidden"
             style={{
-              //         backgroundImage: `
-              //   linear-gradient(to right, #e2e8f0 1px, transparent 1px),
-              //   linear-gradient(to bottom, #e2e8f0 1px, transparent 1px)
-              // `,
-
               backgroundImage: `
         repeating-linear-gradient(0deg, transparent, transparent 19px, rgba(75, 85, 99, 0.08) 19px, rgba(75, 85, 99, 0.08) 20px, transparent 20px, transparent 39px, rgba(75, 85, 99, 0.08) 39px, rgba(75, 85, 99, 0.08) 40px),
         repeating-linear-gradient(90deg, transparent, transparent 19px, rgba(75, 85, 99, 0.08) 19px, rgba(75, 85, 99, 0.08) 20px, transparent 20px, transparent 39px, rgba(75, 85, 99, 0.08) 39px, rgba(75, 85, 99, 0.08) 40px),
@@ -91,20 +78,6 @@ export default function RootLayout({
                 "radial-gradient(ellipse 70% 60% at 50% 0%, #000 60%, transparent 100%)",
             }}
           />
-          {/* <div className="min-h-screen w-full bg-white relative text-gray-800">
-  <div
-    className="absolute inset-0 z-0 pointer-events-none"
-    style={{
-      backgroundImage: `
-        repeating-linear-gradient(0deg, transparent, transparent 19px, rgba(75, 85, 99, 0.08) 19px, rgba(75, 85, 99, 0.08) 20px, transparent 20px, transparent 39px, rgba(75, 85, 99, 0.08) 39px, rgba(75, 85, 99, 0.08) 40px),
-        repeating-linear-gradient(90deg, transparent, transparent 19px, rgba(75, 85, 99, 0.08) 19px, rgba(75, 85, 99, 0.08) 20px, transparent 20px, transparent 39px, rgba(75, 85, 99, 0.08) 39px, rgba(75, 85, 99, 0.08) 40px),
-        radial-gradient(circle at 20px 20px, rgba(55, 65, 81, 0.12) 2px, transparent 2px),
-        radial-gradient(circle at 40px 40px, rgba(55, 65, 81, 0.12) 2px, transparent 2px)
-      `,
-      backgroundSize: '40px 40px, 40px 40px, 40px 40px, 40px 40px',
-    }}
-  />
-</div> */}
 
           <div
             className="fixed inset-0 z-0 pointer-events-none hidden dark:block"

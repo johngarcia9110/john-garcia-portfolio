@@ -8,7 +8,7 @@ export const DATA = {
   location: "Bay Area, CA",
   locationLink: "https://www.google.com/maps/place/bayarea",
   description:
-    "Product focused software engineer. I love building things that people love enjoy using.",
+    "Product focused software engineer. I love building things that people enjoy using.",
   summary:
     "In 2014, I worked as an Avionics Technician in the US Air Force with what felt like the most poorly designed software to maintain and troubleshoot aircraft systems. My frustration with these systems inspired me to learn how to code and build software that people would enjoy using.",
   avatarUrl: "/me2.jpeg",
