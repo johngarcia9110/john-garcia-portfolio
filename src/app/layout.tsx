@@ -1,3 +1,4 @@
+import AutoRefresh from "@/components/auto-refresh";
 import Navbar from "@/components/navbar";
 import { ThemeProvider } from "@/components/theme-provider";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -54,6 +55,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    <AutoRefresh>
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
@@ -104,5 +106,6 @@ export default function RootLayout({
         </ThemeProvider>
       </body>
     </html>
+    </AutoRefresh>
   );
 }

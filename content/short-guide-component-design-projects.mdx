@@ -1,0 +1,104 @@
+---
+title: "Building a reusable component system for your projects"
+publishedAt: "2024-06-18"
+summary: "A general guide of things to consider when building a reusable component system for your projects."
+image: "/blog/UnfinishedProjects.png"
+---
+
+We all have a bunch of half-finished projects sitting around. The usual reason they die isn’t a lack of ideas or skill—it’s that momentum drops once the initial excitement fades. What actually kills them is friction: re-making the same decisions, rebuilding the same UI pieces, and slowing down just enough to lose the thread.
+
+For me, having a small reusable component system has often been the difference between finishing something and letting it rot in repo purgatory.
+
+> I already use a component system at work. Building one for my own small projects feels like overkill.
+
+I used to think this too. I don’t anymore.
+
+This isn’t about scale or polish. It’s about reducing the amount of thinking you have to do just to get started. Every new project either forces you to re-solve familiar problems, or lets you reuse decisions you’ve already made and keep moving.
+
+## The tradeoff (no pretending otherwise)
+
+A reusable component system *does* take time to build and maintain. There’s no way around that. The reason it’s still worth it is that you don’t need much of one for it to pay off.
+
+The key is being very strict about scope. “Minimal” doesn’t mean half-baked—it means deliberate.
+
+If something isn’t reused across projects, it doesn’t belong in the system.
+
+Here’s the surface area I personally care about for side projects.
+
+### General look and feel
+
+- Typography  
+- Spacing  
+- Color tokens  
+
+### Core components
+
+- Button  
+- Input  
+- Select  
+- Text  
+- Icon  
+- Modal  
+- Toast  
+- Card  
+- Loading Indicator  
+
+I don’t add a component unless I’ve used it at least three times across more than one project. Until then, it stays local.
+
+## Where projects actually stall
+
+Most projects don’t stall because of big architectural problems. They stall in the boring middle: loading states, error handling, edge cases you didn’t feel like solving *again*.
+
+If a component only works in the happy path, it creates friction every time you use it.
+
+For each component, I expect it to handle:
+
+- Loading  
+- Empty  
+- Error  
+- Disabled  
+- Focus  
+- Overflow  
+
+Once those are covered, accessibility stops being an afterthought and becomes part of what “done” means.
+
+### Accessibility as a default
+
+I’m not trying to be perfect here. I just want every component to be safe to use by default.
+
+That usually means checking:
+
+- Keyboard behavior  
+- Focus order and visibility  
+- ARIA roles  
+- Color contrast  
+- Touch targets  
+
+If I have to remember to “add accessibility later,” I won’t. So it has to be baked in.
+
+## Keeping the system from getting weird
+
+Once you have more than a handful of components, you need a way to see what actually exists and how it behaves. Otherwise the system slowly drifts and becomes hard to change.
+
+I usually reach for Storybook for this, but the specific tool doesn’t matter much. Ladle, React Cosmos, or newer tools with AI baked in all solve the same problem: making components visible, testable, and harder to accidentally break.
+
+## Actually using it across projects
+
+I’ve seen two approaches work:
+
+1. A monorepo with apps and shared UI
+2. A shared npm package
+
+I prefer a shared npm package. I like keeping projects standalone, even if that means a bit more friction when making library changes.
+
+### Rough workflow
+
+- Create a standalone repo for the UI library  
+- Export a small, stable public API from a single entry point (e.g. `@example/ui`)  
+- Build and publish to npm  
+
+Once it’s published, new projects start with less resistance. You install the library, import familiar components, and move straight to the interesting problems instead of setup work.
+
+Yes, switching repos to tweak a component can be annoying. That’s the cost. The benefit is that you spend less time fighting UI decisions and more time finishing things.
+
+For side projects especially, that tradeoff has been well worth it.

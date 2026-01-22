@@ -77,7 +77,7 @@ export default async function BlogPage() {
                       <CardTitle className="text-lg">
                         {post.metadata.title}
                       </CardTitle>
-                      <p className="text-sm text-muted-foreground line-clamp-2">
+                      <p className="text-sm text-muted-foreground line-clamp-2 mb-2">
                         {post.metadata.summary}
                       </p>
                       <p className="text-xs text-muted-foreground pt-2">
