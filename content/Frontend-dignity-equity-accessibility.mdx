@@ -2,6 +2,7 @@
 title: "Accessibility - the last value to be considered"
 publishedAt: "2025-06-18"
 summary: "Exploring the direct connection between frontend development and dignity, equity and accessibility."
+image: "/blog/AccessibilityCover.jpeg"
 ---
 
 Most teams believe dignity, equity, and accessibility matter. The problem is that not all of these values survive the product requirements process or implementation. What’s left is often a general sense of being “values-driven,” not evidence of it.
@@ -18,13 +19,16 @@ The result is that accessibility is the value most likely to be compromised. It'
 
 Accessibility fails differently than dignity or equity because its absence is easy to miss if you are not personally affected by it. A screen reader user will immediately know when a button has no label. A keyboard-only user will instantly feel a broken focus order. But for everyone else, the product appears to work fine. That asymmetry makes accessibility uniquely fragile.
 
-These failures are not theoretical. They are observable. Low-contrast text that fails WCAG ratios. Icon-only buttons with no accessible name. Modals that trap keyboard focus or lose it entirely. Small touch targets that are difficult to activate (Linear I'm looking at you). Dynamic content that updates visually but is never announced to assistive technologies. In each case, the interface does not degrade gracefully. It becomes partially or fully unusable for a class of users.
+These are the most commen offending patterns I've seen in the wild:
+- Low-contrast text that fails WCAG ratios. 
+- Icon-only buttons with no accessible name. 
+- Modals that trap keyboard focus or lose it entirely. 
+- Small touch targets that are difficult to activate (**Linear** I'm looking at you).
+- Dynamic content that updates visually but is never announced to assistive technologies. 
 
-This is where “values-driven” intent most often collapses. Not because teams don’t care, but because accessibility requires discipline, foresight, and constraints that are easy to rationalize away. It requires teams to care about users they may never meet and problems they may never personally experience.
+Being “values-driven” almost always collapses is one area or another. This isn't  because teams don’t care, but because accessibility requires discipline, foresight, and constraints that are easy to rationalize away. It requires teams to care about users they may never meet and problems they may never personally experience.
 
 If we want accessibility to survive the requirements process, it has to be treated as a functional requirement, not a moral aspiration. That means making it observable and enforceable in the same way we treat performance, security, or correctness. Color contrast should be checked, not debated. Keyboard navigation should be testable, not assumed. Screen reader output should be reviewed, not deferred.
-
-The same rule applies across dignity, equity, and accessibility: values only matter when they change decisions. If a value cannot be traced to a specific piece of copy, a default setting, or an interaction constraint, it is not guiding the product—it is decorating it.
 
 The goal is not to be perfect. The goal is to be intentional. To be able to say, with evidence, that a choice was made because it reduced harm, preserved agency, or widened access for someone who would otherwise be excluded. That is what it means to make values real in frontend work.
 

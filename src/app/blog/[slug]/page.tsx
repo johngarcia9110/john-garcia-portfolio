@@ -1,9 +1,15 @@
+import BlurFade from "@/components/magicui/blur-fade";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { getBlogPosts, getPost } from "@/data/blog";
 import { DATA } from "@/data/resume";
 import { formatDate } from "@/lib/utils";
+import { ArrowLeft } from "lucide-react";
 import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Suspense } from "react";
+
+const BLUR_FADE_DELAY = 0.04;
 
 export async function generateStaticParams() {
   const posts = await getBlogPosts();
@@ -88,20 +94,70 @@ export default async function Blog({
           }),
         }}
       />
-      <h1 className="title font-medium text-2xl tracking-tighter max-w-[650px]">
-        {post.metadata.title}
-      </h1>
-      <div className="flex justify-between items-center mt-2 mb-8 text-sm max-w-[650px]">
-        <Suspense fallback={<p className="h-5" />}>
-          <p className="text-sm text-neutral-600 dark:text-neutral-400">
-            {formatDate(post.metadata.publishedAt)}
-          </p>
-        </Suspense>
-      </div>
-      <article
-        className="prose dark:prose-invert"
-        dangerouslySetInnerHTML={{ __html: post.source }}
-      ></article>
+
+      <BlurFade delay={BLUR_FADE_DELAY}>
+        <Link
+          href="/blog"
+          className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-8"
+        >
+          <ArrowLeft className="size-4" />
+          Back to blog
+        </Link>
+      </BlurFade>
+
+      {post.metadata.image && (
+        <BlurFade delay={BLUR_FADE_DELAY * 2}>
+          <div className="relative w-full aspect-video mb-8 rounded-lg overflow-hidden">
+            <Image
+              src={post.metadata.image}
+              alt={post.metadata.title}
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
+        </BlurFade>
+      )}
+
+      <BlurFade delay={post.metadata.image ? BLUR_FADE_DELAY * 3 : BLUR_FADE_DELAY * 2}>
+        <h1 className="title font-medium text-2xl tracking-tighter max-w-[650px]">
+          {post.metadata.title}
+        </h1>
+      </BlurFade>
+
+      <BlurFade delay={post.metadata.image ? BLUR_FADE_DELAY * 4 : BLUR_FADE_DELAY * 3}>
+        <div className="flex items-center gap-3 mt-4 mb-8">
+          <Avatar className="size-10 border">
+            <AvatarImage alt={DATA.name} src={DATA.avatarUrl} />
+            <AvatarFallback>{DATA.initials}</AvatarFallback>
+          </Avatar>
+          <div className="flex flex-col">
+            <span className="text-sm font-medium">{DATA.name}</span>
+            <span className="text-sm text-muted-foreground">
+              {formatDate(post.metadata.publishedAt)} · {post.readingTime} min read
+            </span>
+          </div>
+        </div>
+      </BlurFade>
+
+      <BlurFade delay={post.metadata.image ? BLUR_FADE_DELAY * 5 : BLUR_FADE_DELAY * 4}>
+        <article
+          className="prose dark:prose-invert max-w-[650px]"
+          dangerouslySetInnerHTML={{ __html: post.source }}
+        />
+      </BlurFade>
+
+      <BlurFade delay={post.metadata.image ? BLUR_FADE_DELAY * 6 : BLUR_FADE_DELAY * 5}>
+        <div className="mt-12 pt-8 border-t max-w-[650px]">
+          <Link
+            href="/blog"
+            className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+          >
+            <ArrowLeft className="size-4" />
+            Back to all posts
+          </Link>
+        </div>
+      </BlurFade>
     </section>
   );
 }

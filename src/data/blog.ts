@@ -38,15 +38,23 @@ export async function markdownToHTML(markdown: string) {
   return p.toString();
 }
 
+export function calculateReadingTime(content: string): number {
+  const wordsPerMinute = 200;
+  const wordCount = content.trim().split(/\s+/).length;
+  return Math.ceil(wordCount / wordsPerMinute);
+}
+
 export async function getPost(slug: string) {
   const filePath = path.join("content", `${slug}.mdx`);
   let source = fs.readFileSync(filePath, "utf-8");
   const { content: rawContent, data: metadata } = matter(source);
   const content = await markdownToHTML(rawContent);
+  const readingTime = calculateReadingTime(rawContent);
   return {
     source: content,
     metadata,
     slug,
+    readingTime,
   };
 }
 
