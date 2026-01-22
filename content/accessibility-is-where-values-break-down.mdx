@@ -1,0 +1,36 @@
+---
+title: "Accessibility Is Where Values Break Down"
+publishedAt: "2025-06-18"
+summary: "Exploring the direct connection between frontend development and dignity, equity and accessibility."
+image: "/blog/AccessibilityCover.jpeg"
+---
+
+Most teams say dignity, equity, and accessibility matter. The problem is that these values often disappear once work moves from principles to implementation. What’s left is a vague sense of being “values-driven,” not evidence of it. If these values are going to matter in frontend work, they have to become **observable**. You should be able to point to a sentence of copy, a default choice, or an interaction pattern and say: *this exists because we were trying to reduce harm or increase agency for someone in a specific situation.*
+
+Dignity and equity are usually the easiest to preserve. It’s rare to see successful products that openly shame users, blame them, or make them feel punished for circumstances they may not control. When those failures do happen, they tend to be corrected quickly, because users abandon products that make them feel bad. In that sense, dignity and equity often align naturally with business incentives.
+
+Accessibility is different. It is the value most likely to be compromised, even by teams with good intentions. In startups, accessibility is often treated as optional unless the product explicitly serves users who rely on assistive technologies. In mature products, it’s framed as too expensive or risky to retrofit. In both cases, it’s deferred in favor of shipping *“core” functionality.*
+
+Part of the problem is visibility. Accessibility failures are immediately obvious to the people affected and often invisible to everyone else. A screen reader user instantly notices when a button has no accessible name. A keyboard-only user immediately feels broken focus order. But to most users, the interface appears to work fine. That asymmetry makes accessibility easy to overlook and easy to rationalize away.
+
+These failures are not abstract. They show up in concrete, repeatable ways:
+
+- Text with insufficient color contrast that fails **WCAG** requirements  
+- Icon-only buttons with no accessible name  
+- Modals that trap focus or drop keyboard users entirely  
+- Small touch targets that are difficult to interact with  
+- Dynamic content changes that are never announced to assistive technologies  
+
+In each case, the UI does not degrade gracefully. It becomes partially or completely unusable for a group of users, often without any obvious signal to the team that built it.
+
+This is where values-driven intent tends to break down. Not because teams don’t care, but because accessibility requires discipline and constraints that don’t always feel urgent. It requires designing for users you may never meet and experiences you may never personally have.
+
+If accessibility is going to survive the requirements process, it has to be treated as a **functional requirement**, not a moral aspiration. Color contrast should be checked, not debated. Keyboard navigation should be testable, not assumed. Screen reader output should be reviewed, not postponed.
+
+The same principle applies to dignity, equity, and accessibility more broadly: **values only matter when they change decisions.** If a value cannot be traced to a specific copy choice, default state, or interaction constraint, it is not guiding the product. *It’s decorating it.*
+
+The goal isn’t perfection. It’s **intentionality**. Being able to point to concrete decisions and say they were made to preserve agency, reduce harm, or widen access for someone who would otherwise be excluded. That’s what it means to make values real in frontend work.
+
+There is reason for optimism. Tooling that automates accessibility checks and encourages better semantic structure is steadily reducing the cost of doing the right thing. As the marginal effort required to build accessible interfaces drops, skipping accessibility becomes harder to justify.
+
+Values don’t survive on intent alone. They survive when **tools, processes, and incentives** make the right choice the easiest choice.
