@@ -96,13 +96,24 @@ export default async function Blog({
       />
 
       <BlurFade delay={BLUR_FADE_DELAY}>
-        <Link
-          href="/blog"
-          className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-8"
-        >
-          <ArrowLeft className="size-4" />
-          Back to blog
-        </Link>
+        <div className="mb-8 flex items-center justify-between">
+          <Link href="/">
+            <Image
+              src="/jg_mark_light.svg"
+              alt="logo mark"
+              className="w-10 h-10"
+              width={32}
+              height={32}
+            />
+          </Link>
+          <Link
+            href="/blog"
+            className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+          >
+            <ArrowLeft className="size-4" />
+            Back to blog
+          </Link>
+        </div>
       </BlurFade>
 
       {post.metadata.image && (
@@ -142,13 +153,13 @@ export default async function Blog({
 
       <BlurFade delay={post.metadata.image ? BLUR_FADE_DELAY * 5 : BLUR_FADE_DELAY * 4}>
         <article
-          className="prose dark:prose-invert max-w-[650px]"
+          className="prose dark:prose-invert w-full max-w-full"
           dangerouslySetInnerHTML={{ __html: post.source }}
         />
       </BlurFade>
 
       <BlurFade delay={post.metadata.image ? BLUR_FADE_DELAY * 6 : BLUR_FADE_DELAY * 5}>
-        <div className="mt-12 pt-8 border-t max-w-[650px]">
+        <div className="mt-12 pt-8 border-t max-w-full w-full">
           <Link
             href="/blog"
             className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"

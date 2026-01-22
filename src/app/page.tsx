@@ -41,7 +41,7 @@ export default function Page() {
   return (
     <main className="flex flex-col min-h-[100dvh] space-y-10">
       <section id="hero">
-        <div className="mx-auto w-full max-w-2xl space-y-8">
+        <div className="mx-auto w-full space-y-8">
           <BlurFade delay={BLUR_FADE_DELAY}>
             <div className=" mb-20">
               <Image

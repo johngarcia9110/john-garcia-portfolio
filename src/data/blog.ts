@@ -63,11 +63,12 @@ async function getAllPosts(dir: string) {
   return Promise.all(
     mdxFiles.map(async (file) => {
       let slug = path.basename(file, path.extname(file));
-      let { metadata, source } = await getPost(slug);
+      let { metadata, source, readingTime } = await getPost(slug);
       return {
         metadata,
         slug,
         source,
+        readingTime,
       };
     }),
   );
