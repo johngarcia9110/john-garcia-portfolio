@@ -8,9 +8,9 @@ export const DATA = {
   location: "Bay Area, CA",
   locationLink: "https://www.google.com/maps/place/bayarea",
   description:
-    "Product-focused engineering leader who helps teams build software that people love to use",
+    "Engineering leader building payment infrastructure at Lumanu",
   summary:
-    "I lead product and engineering at Lumanu, where I work with a great team to build payment solutions that make it easy for businesses to pay contractors quickly and at scale. \n\n My path into software started in the U.S. Air Force, where I was an Avionics Technician dealing with clunky tools that made tough jobs even harder. That frustration pushed me to start coding, and I’ve been hooked ever since. These days, the same motivation drives me to build tools that actually make life easier and put the user experience at the center of everything I do.",
+    "I’m a senior frontend engineer with 8+ years of experience building and scaling high-stakes web applications, primarily in fintech and regulated environments. At Lumanu, I lead frontend work across payments, onboarding, and compliance—systems used by thousands of people each month where trust, clarity, and correctness matter. I translate messy product and business constraints into durable frontend architecture, stay hands-on in the code, and help teams ship consistently through thoughtful technical direction, mentorship, and close collaboration with product and design.",
   avatarUrl: "/me2.jpeg",
   skills: ["React", "Next.js", "Typescript", "Node.js", "Python", "Postgres"],
   navbar: [
@@ -34,26 +34,6 @@ export const DATA = {
         icon: Icons.linkedin,
 
         navbar: true,
-      },
-      // X: {
-      //   name: "X",
-      //   url: "https://dub.sh/dillion-twitter",
-      //   icon: Icons.x,
-
-      //   navbar: true,
-      // },
-      // Youtube: {
-      //   name: "Youtube",
-      //   url: "https://dub.sh/dillion-youtube",
-      //   icon: Icons.youtube,
-      //   navbar: true,
-      // },
-      email: {
-        name: "Send Email",
-        url: "#",
-        icon: Icons.email,
-
-        navbar: false,
       },
     },
   },
