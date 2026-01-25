@@ -4,9 +4,9 @@ import BlurFadeText from "@/components/magicui/blur-fade-text";
 import { ResumeCard } from "@/components/resume-card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { DATA } from "@/data/resume";
 import { cn } from "@/lib/utils";
+import { Button } from "@johngarcia9110/invariant";
 import { ChevronsDown } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -66,6 +66,10 @@ export default function Page() {
                 delay={BLUR_FADE_DELAY}
                 text={DATA.description}
               />
+              <Button variant="primary"
+              onClick={() => {
+                console.log("Test");
+              }}>Testing</Button>
             </div>
             <BlurFade delay={BLUR_FADE_DELAY}>
               <Avatar className="size-28 border">
@@ -93,7 +97,7 @@ export default function Page() {
               <h2 className="text-xl font-bold">Work Experience</h2>
               <Button
                 className="text-sm text-muted-foreground"
-                variant="ghost"
+                variant="outline"
                 onClick={() =>
                   toggleAllWorkItemsExpanded(!allWorkItemsExpanded)
                 }

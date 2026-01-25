@@ -63,7 +63,7 @@ export default function RootLayout({
           fontSans.variable
         )}
       >
-        <ThemeProvider attribute="class" defaultTheme="light">
+        <ThemeProvider defaultMode="light">
           <div
             className="absolute inset-0 z-0 dark:hidden"
             style={{
